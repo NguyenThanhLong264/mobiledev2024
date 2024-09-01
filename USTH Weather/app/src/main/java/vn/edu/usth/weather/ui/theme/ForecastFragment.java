@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -60,8 +63,27 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_forecast,container,false);
-        v.setBackgroundColor(0xFFFF0000);
-        return v;
+//        This is the lab 3
+//        View v = inflater.inflate(R.layout.fragment_forecast,container,false);
+//        v.setBackgroundColor(0x20FF0000);
+
+        LinearLayout layout1 = new LinearLayout(getContext());
+        layout1.setOrientation(LinearLayout.VERTICAL);
+        layout1.setBackgroundColor(0x2000FFFF);
+
+        View bv = inflater.inflate(R.layout.fragment_forecast,container,false);
+        bv.setBackgroundColor(0x20FF0000);
+
+        TextView tv = new TextView(getContext());
+        tv.setText("Thursday");
+
+        ImageView iv = new ImageView((getContext()));
+        iv.setImageResource(R.drawable.ic_launcher_foreground);
+
+        layout1.addView(tv);
+        layout1.addView(iv);
+        layout1.addView(bv);
+
+        return layout1;
     }
 }
