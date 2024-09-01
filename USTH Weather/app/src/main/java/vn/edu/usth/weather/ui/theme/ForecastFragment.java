@@ -71,18 +71,18 @@ public class ForecastFragment extends Fragment {
         layout1.setOrientation(LinearLayout.VERTICAL);
         layout1.setBackgroundColor(0x2000FFFF);
 
-        View bv = inflater.inflate(R.layout.fragment_forecast,container,false);
-        bv.setBackgroundColor(0x20FF0000);
+//        View bv = inflater.inflate(R.layout.fragment_forecast,container,false);
+//        bv.setBackgroundColor(0x20FF0000);
 
         TextView tv = new TextView(getContext());
         tv.setText("Thursday");
 
         ImageView iv = new ImageView((getContext()));
-        iv.setImageResource(R.drawable.ic_launcher_foreground);
+        iv.setImageResource(R.drawable.weather_2);
 
         layout1.addView(tv);
         layout1.addView(iv);
-        layout1.addView(bv);
+//        layout1.addView(bv);
 
         return layout1;
     }
