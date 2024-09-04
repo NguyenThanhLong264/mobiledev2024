@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -62,28 +59,25 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+//        Inflate the layout for this fragment
 //        This is the lab 3
-//        View v = inflater.inflate(R.layout.fragment_forecast,container,false);
-//        v.setBackgroundColor(0x20FF0000);
+        View v = inflater.inflate(R.layout.fragment_forecast,container,false);
+        v.setBackgroundColor(0x20FF0000);
+        return v;
 
-        LinearLayout layout1 = new LinearLayout(getContext());
-        layout1.setOrientation(LinearLayout.VERTICAL);
-        layout1.setBackgroundColor(0x2000FFFF);
-
-//        View bv = inflater.inflate(R.layout.fragment_forecast,container,false);
-//        bv.setBackgroundColor(0x20FF0000);
-
-        TextView tv = new TextView(getContext());
-        tv.setText("Thursday");
-
-        ImageView iv = new ImageView((getContext()));
-        iv.setImageResource(R.drawable.weather_2);
-
-        layout1.addView(tv);
-        layout1.addView(iv);
-//        layout1.addView(bv);
-
-        return layout1;
+//        LinearLayout layout1 = new LinearLayout(getContext());
+//        layout1.setOrientation(LinearLayout.VERTICAL);
+//        layout1.setBackgroundColor(0x2000FFFF);
+//
+//        TextView tv = new TextView(getContext());
+//        tv.setText("Thursday");
+//
+//        ImageView iv = new ImageView((getContext()));
+//        iv.setImageResource(R.drawable.weather_2);
+//
+//        layout1.addView(tv);
+//        layout1.addView(iv);
+//
+//        return layout1;
     }
 }
