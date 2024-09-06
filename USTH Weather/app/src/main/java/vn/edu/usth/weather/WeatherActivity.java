@@ -15,8 +15,12 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_weather);
+//        Weather fragment
+        WeatherFragment weatherFragment = new WeatherFragment();
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.main, weatherFragment).commit();
+//        Forecast fragment
         ForecastFragment firstFragment = new ForecastFragment();
-// Add the fragment to the 'container' FrameLayout
         getSupportFragmentManager().beginTransaction().add(
                 R.id.main, firstFragment).commit();
 
