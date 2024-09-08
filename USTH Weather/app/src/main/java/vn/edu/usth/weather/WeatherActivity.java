@@ -6,8 +6,6 @@ import android.util.Log;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import vn.edu.usth.weather.ui.theme.ForecastFragment;
-
 public class WeatherActivity extends AppCompatActivity {
 
     @Override
@@ -20,9 +18,9 @@ public class WeatherActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(
                 R.id.main, weatherFragment).commit();
 //        Forecast fragment
-        ForecastFragment firstFragment = new ForecastFragment();
+        ForecastFragment forecastFragment = new ForecastFragment();
         getSupportFragmentManager().beginTransaction().add(
-                R.id.main, firstFragment).commit();
+                R.id.main, forecastFragment).commit();
 
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
