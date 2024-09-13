@@ -5,6 +5,11 @@ import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -13,14 +18,26 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_weather);
-//        Weather fragment
-        WeatherFragment weatherFragment = new WeatherFragment();
-        getSupportFragmentManager().beginTransaction().add(
-                R.id.main, weatherFragment).commit();
-//        Forecast fragment
-        ForecastFragment forecastFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(
-                R.id.main, forecastFragment).commit();
+
+        //View page
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.myViewPager);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+////        Weather fragment
+//        WeatherFragment weatherFragment = new WeatherFragment();
+//        getSupportFragmentManager().beginTransaction().add(
+//                R.id.main, weatherFragment).commit();
+////        Forecast fragment
+//        ForecastFragment forecastFragment = new ForecastFragment();
+//        getSupportFragmentManager().beginTransaction().add(
+//                R.id.main, forecastFragment).commit();
 
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -28,6 +45,9 @@ public class WeatherActivity extends AppCompatActivity {
 //            return insets;
 //        });
     }
+
+
+
     @Override
     public void onStart() {
         super.onStart();
