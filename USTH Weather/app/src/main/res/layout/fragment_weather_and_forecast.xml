@@ -16,8 +16,8 @@
         android:name="vn.edu.usth.weather.WeatherFragment"/>
 
     <fragment
+        android:name="vn.edu.usth.weather.ForecastFragment"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="1"
-        android:name="vn.edu.usth.weather.ForecastFragment"/>
+        android:layout_weight="1" />
 </LinearLayout>
