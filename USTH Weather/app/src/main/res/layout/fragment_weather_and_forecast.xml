@@ -9,16 +9,15 @@
     tools:context=".WeatherActivity"
     android:layout_margin="16dp">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentWeather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:name="vn.edu.usth.weather.WeatherFragment"/>
+        android:name="vn.edu.usth.weather.WeatherFragment" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentForecast"
         android:name="vn.edu.usth.weather.ForecastFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 </LinearLayout>
